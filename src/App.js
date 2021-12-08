@@ -1,4 +1,5 @@
 import React from 'react';
+import Card from './card'
 
 export default class App extends React.Component{
   constructor(props){
@@ -7,7 +8,10 @@ export default class App extends React.Component{
     this.state = {
       pokemonlink: [],
       pokemon: [],
-      apiurl: 'https://pokeapi.co/api/v2/pokemon/'
+      apiurl: 'https://pokeapi.co/api/v2/pokemon/',
+      show: false,
+      pokeCard: {}
+
     }
     fetch(this.state.apiurl)
       .then(response => response.json())
@@ -62,12 +66,23 @@ export default class App extends React.Component{
             return 0;
           })
       });
+      this.showModal = this.showModal.bind(this);
+  }
+
+  showModal(poke){
+    // console.log(poke);
+
+    this.setState({
+      show: true,
+      pokeCard: poke
+    });
   }
   render(){
     // console.log(this.state.pokemon)
 
     return(
       <>
+        <Card show={this.state.show} data={this.state.pokeCard}/>
 
       <table>
         <tr>
@@ -83,13 +98,17 @@ export default class App extends React.Component{
 
 
                 <tr>
-                  <td>{poke.species}</td>
+                <td><p class="cursor" onClick={e => {
+                  this.showModal(poke);
+                }}
+                >{poke.species}</p></td>
                   <td>{poke.form}</td>
                   <td>
                     <ul>
                       {poke.abilities.map(ability => {
                                                return (
                           <li>{ability}</li>
+
                         )
                       })}
                     </ul>
