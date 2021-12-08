@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class Pokelist extends React.Component{
+export default class App extends React.Component{
   constructor(props){
     super(props)
 
@@ -15,9 +15,11 @@ export default class Pokelist extends React.Component{
           // console.log(data)
           // console.log(data.results[0].url)
           const pokemonlinks = [];
+          let keyId = 0;
           data.results.map(pokemon => pokemonlinks.push(pokemon.url))
           const pokemonArr = [];
           pokemonlinks.map((poke) => {
+            keyId++;
             fetch(poke)
               .then(response => response.json())
               .then(data => {
@@ -53,7 +55,7 @@ export default class Pokelist extends React.Component{
 
 
 
-                pokemonArr.push({abilities: abilities, form: form, species: species, types: types})
+                pokemonArr.push({keyId: keyId, abilities: abilities, form: form, species: species, types: types})
                 this.setState({pokemon: pokemonArr})
                 // console.log(data)
               })
@@ -86,10 +88,8 @@ export default class Pokelist extends React.Component{
                   <td>
                     <ul>
                       {poke.abilities.map(ability => {
-                        return (
-
-                            <li>{ability}</li>
-
+                                               return (
+                          <li>{ability}</li>
                         )
                       })}
                     </ul>
