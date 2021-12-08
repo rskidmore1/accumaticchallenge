@@ -63,46 +63,58 @@ export default class Pokelist extends React.Component{
   }
   render(){
     // console.log(this.state.pokemon)
+
     return(
       <>
-        <ul>
+
+      <table>
+        <tr>
+          <th>Species</th>
+          <th>Form</th>
+          <th>Abilities</th>
+          <th>Types</th>
+        </tr>
+
 
           {this.state.pokemon.map((poke) => {
-            console.log(poke)
             return (
-              <li>
-                <p>Species: {poke.species}</p>
 
-              <ul>
-                <li>Form: {poke.form}</li>
 
-                <li>
-                  <p>Abilities</p>
-
-                  <ul>
-                    {poke.abilities.map(ability =>{
-                      return (
-                        <li>{ability}</li>
-                      )
-                    })}
-                  </ul>
-                  </li>
-                  <li>
-                    <p>Types</p>
-
+                <tr>
+                  <td>{poke.species}</td>
+                  <td>{poke.form}</td>
+                  <td>
                     <ul>
-                      {poke.types.map(type => {
+                      {poke.abilities.map(ability => {
                         return (
-                          <li>{type}</li>
+
+                            <li>{ability}</li>
+
                         )
                       })}
                     </ul>
-                  </li>
-              </ul>
-            </li>
-          )
+                  </td>
+                  <td>
+                    <ul>
+                    {poke.types.map(type => {
+                        return (
+
+                          <li>{type}</li>
+
+                        )
+                      })}
+                    </ul>
+                  </td>
+                </tr>
+
+
+            )
           })}
-      </ul>
+
+
+
+      </table>
+
       </>
     )
   }
