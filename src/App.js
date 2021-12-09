@@ -95,9 +95,8 @@ export default class App extends React.Component{
     return(
       <>
 
-        <Card onClose={this.showModal} show={this.state.show} data={this.state.pokeCard}>
-          aksdjfa sdfj aksdf aksdjf aksdjf kfjdkajsdkfj asdkfjkfdjkasjdfklasjd fasdfkjfkdj aksdjf
-        </Card>
+        <Card onClose={this.showModal} show={this.state.show} data={this.state.pokeCard} />
+
 
       <table>
           <thead>
