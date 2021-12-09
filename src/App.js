@@ -98,57 +98,55 @@ export default class App extends React.Component{
         <Card onClose={this.showModal} show={this.state.show} data={this.state.pokeCard} />
 
 
-      <table>
-          <thead>
-            <tr>
-              <th>Species</th>
-              <th>Form</th>
-              <th>Abilities</th>
-              <th>Types</th>
-            </tr>
-          </thead>
 
-          <tbody>
-            {this.state.pokemon.map((poke, index) => {
-              return (
+        <table>
+            <thead>
+              <tr>
+                <th>Species</th>
+                <th>Form</th>
+                <th>Abilities</th>
+                <th>Types</th>
+              </tr>
+            </thead>
 
-
-                <tr key={index}>
-                  <td><p className="cursor" onClick={e => {
-                    this.showModal(poke);
-                  }}
-                  >{poke.species}</p></td>
-                    <td>{poke.form}</td>
-                    <td>
-                      <ul>
-                        {poke.abilities.map((ability, index) => {
-                          return (
-                            <li key={index}>{ability}</li>
-                          )
-                        })}
-                      </ul>
-                    </td>
-                    <td>
-                      <ul>
-                      {poke.types.map((type,index) => {
-                          return (
-                            <li key={index}>{type}</li>
-                          )
-                        })}
-                      </ul>
-                    </td>
-                  </tr>
+            <tbody>
+              {this.state.pokemon.map((poke, index) => {
+                return (
 
 
-              )
-            })}
+                  <tr key={index}>
+                    <td><p className="cursor" onClick={e => {
+                      this.showModal(poke);
+                    }}
+                    >{poke.species}</p></td>
+                      <td>{poke.form}</td>
+                      <td>
+                        <ul>
+                          {poke.abilities.map((ability, index) => {
+                            return (
+                              <li key={index}>{ability}</li>
+                            )
+                          })}
+                        </ul>
+                      </td>
+                      <td>
+                        <ul>
+                        {poke.types.map((type,index) => {
+                            return (
+                              <li key={index}>{type}</li>
+                            )
+                          })}
+                        </ul>
+                      </td>
+                    </tr>
 
 
-        </tbody>
-      </table>
+                )
+              })}
 
 
-
+          </tbody>
+        </table>
 
       </>
     )
