@@ -83,7 +83,7 @@ export default class App extends React.Component{
     // console.log(poke);
 
     this.setState({
-      show: true,
+      show: !this.state.show,
       pokeCard: poke
     });
 
@@ -94,7 +94,10 @@ export default class App extends React.Component{
 
     return(
       <>
-        <Card show={this.state.show} data={this.state.pokeCard}/>
+
+        <Card onClose={this.showModal} show={this.state.show} data={this.state.pokeCard}>
+          aksdjfa sdfj aksdf aksdjf aksdjf kfjdkajsdkfj asdkfjkfdjkasjdfklasjd fasdfkjfkdj aksdjf
+        </Card>
 
       <table>
           <thead>
@@ -144,6 +147,9 @@ export default class App extends React.Component{
 
         </tbody>
       </table>
+
+
+
 
       </>
     )

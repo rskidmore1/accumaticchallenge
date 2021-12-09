@@ -5,7 +5,8 @@ export default class Card extends React.Component {
   // constructor(props) {
   //   super(props)
 
-     // console.log(this.props.data)
+  //    console.log(this.props.data)
+  //    this.onClose = this.onClose.bind(this);
   // }
     onClose = e => {
       this.props.onClose && this.props.onClose(e);
@@ -29,6 +30,7 @@ export default class Card extends React.Component {
             </button>
           </div>
         </div>
+
 
 
       //   <div>
