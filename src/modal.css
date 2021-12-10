@@ -7,9 +7,18 @@ body {
   display: flex;
   justify-content: center;
   align-items: center; */
+  margin: 0;
 }
+table {
+  border-collapse: collapse;
+}
+
+thead{
+
+}
+
 .modal {
-  width: 500px;
+  width:  300px;
   background: white;
   border: 1px solid #ccc;
   transition: 1.1s ease-out;
@@ -19,7 +28,8 @@ body {
   opacity: 1;
   visibility: visible;
   position: fixed;
-  margin: 10rem auto auto auto;
+  margin: 3rem auto auto auto;
+  padding: 1rem;
 }
 .modal.off {
   opacity: 0;
@@ -40,6 +50,7 @@ body {
     offset-path: none;
   }
 }
+
 .modal h2 {
   border-bottom: 1px solid #ccc;
   padding: 1rem;
@@ -60,6 +71,11 @@ body {
   padding: 0.5rem 1rem;
   font-size: 0.8rem;
   line-height: 1;
+}
+@media only screen and (max-width: 300px) {
+  .modal{
+    width: 100px;
+  }
 }
 #centered-toggle-button {
   position: absolute;

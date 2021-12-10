@@ -22,11 +22,15 @@ export default class Card extends React.Component {
 
 
         <div className="modal" id="modal">
-          <h2>Modal Window</h2>
+          <button className="toggle-button" onClick={this.onClose}>
+            X
+          </button>
+          <h2>Pokemon Details</h2>
 
           <div>
-            <p>{this.props.data.form}</p>
-            <p>{this.props.data.species}</p>
+            <p>Form: {this.props.data.form}</p>
+            <p>Species: {this.props.data.species}</p>
+            <span>Abilities </span>
             <ul>
               {this.props.data.abilities.map((ability, index) => {
                 return (
@@ -34,6 +38,7 @@ export default class Card extends React.Component {
                 )
               })}
             </ul>
+            <span>Types</span>
             <ul>
               {this.props.data.types.map((type, index) => {
                 return (
@@ -41,7 +46,7 @@ export default class Card extends React.Component {
                 )
               })}
             </ul>
-            <p>weight: {this.props.data.weight}</p>
+            <p>Weight: {this.props.data.weight}</p>
             <p>Height: {this.props.data.height}</p>
             <p>Base Experience: {this.props.data.base_experience}</p>
             <img src={this.props.data.sprite} alt="sprite"></img>
@@ -49,9 +54,7 @@ export default class Card extends React.Component {
 
           <div className="content">{this.props.children}</div>
           <div className="actions">
-            <button className="toggle-button" onClick={this.onClose}>
-              close
-            </button>
+
           </div>
         </div>
 
