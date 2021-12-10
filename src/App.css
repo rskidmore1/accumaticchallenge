@@ -117,12 +117,8 @@
 
 /* end: poke ball section  */
 .table-header{
-  position: fixed;
-  /* padding-bottom: 1rem; */
+   position: fixed;
    background-color: white;
-   /* display: none; */
-   /* border-bottom: 10px solid white; */
-/* margin-bottom: 2rem; */
 }
 .table-header > tr > th{
 
@@ -131,9 +127,6 @@
 
 }
 
-.table-body{
-  /* padding-top: 3rem; */
-}
 
 .type-padding-left{
   padding-left: 3.5rem;
