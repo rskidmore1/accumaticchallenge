@@ -1,19 +1,12 @@
 import React from 'react';
 import "./modal.css";
 
-export default class Card extends React.Component {
-  // constructor(props) {
-  //   super(props)
-
-  //    console.log(this.props.data)
-  //    this.onClose = this.onClose.bind(this);
-  // }
+export default class Modal extends React.Component {
     onClose = e => {
       this.props.onClose && this.props.onClose(e);
     };
 
     render() {
-    // console.log(this.props.data)
 
       if (!this.props.show) {
         return null;
@@ -57,8 +50,6 @@ export default class Card extends React.Component {
 
           </div>
         </div>
-
-
 
       );
     }
